@@ -1,0 +1,72 @@
+openapi: 3.0.1
+info:
+  title: Weather
+  description: Allows users to fetch current and forecasted weather information based on location.
+  version: 'v1.2'
+servers:
+  - url: http://api.weatherapi.com/v1
+paths:
+  /current.json:
+    get:
+      operationId: getWeatherNow
+      summary: Get the current weather information based on city, postal code, or latitude/longitude.
+      parameters:
+        - in: query
+          name: key
+          schema:
+            type: string
+          required: true
+          description: API Key
+        - in: query
+          name: q
+          schema:
+            type: string
+          required: true
+          description: >
+            Query parameter based on which data is returned. Options include:
+            - Latitude and Longitude (Decimal degree), e.g.: q=48.8567,2.3508
+            - City name, e.g.: q=Paris
+            - UK postcode, e.g.: q=SW1
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+  /forecast.json:
+    get:
+      operationId: getWeatherForecast
+      summary: Get up to 16-day weather forecast based on location. The first day is always the current date.
+      parameters:
+        - in: query
+          name: key
+          schema:
+            type: string
+          required: true
+          description: API Key
+        - in: query
+          name: q
+          schema:
+            type: string
+          required: false
+          description: >
+            Query parameter based on which data is returned. Options include:
+            - Latitude and Longitude (Decimal degree), e.g.: q=48.8567,2.3508
+            - City name, e.g.: q=Paris
+            - UK postcode, e.g.: q=SW1
+        - in: query
+          name: days
+          schema:
+            type: integer
+          required: false
+          description: Number of forecast days (maximum 16). Only required with the forecast endpoint.
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true

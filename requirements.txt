@@ -1,0 +1,10 @@
+langchain
+langchain-ollama
+ollama
+sentence-transformers
+faiss-cpu
+PyMuPDF
+spacy
+requests
+pyyaml
+python-dotenv
