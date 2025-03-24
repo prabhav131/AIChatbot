@@ -1,3 +1,17 @@
+# 🤖 AI Chatbot  
+
+## 🚀 About  
+
+This repository contains an **AI-powered chatbot** that understands natural language, processes queries, and provides intelligent responses. It can be integrated into various applications, such as customer support, personal assistants, and automation workflows.  
+
+## 🔹 Features  
+
+- ✅ **Natural Language Understanding (NLU)** – Detects user intent and extracts key entities.  
+- ✅ **Multi-Intent Handling** – Routes queries to appropriate modules (e.g., RAG, email, API calls).  
+- ✅ **Memory & Context Awareness** – Maintains conversation history for better responses.  
+- ✅ **Retrieval-Augmented Generation (RAG)** – Fetches relevant documents for knowledge-based answers.  
+- ✅ **Extensible Architecture** – Supports additional tools like scheduling, automation, and more.
+
 Frameworks used:
     - langchain
     - ollama
